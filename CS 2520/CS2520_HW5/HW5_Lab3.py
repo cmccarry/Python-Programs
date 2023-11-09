@@ -1,3 +1,10 @@
+'''
+Given 2 strings, prints:
+    the characters that occur in both strings.
+    the characters that occur in one string but not the other.
+    the letters that don't occur in either string.
+'''
+
 def common_characters(set1, set2):
     common = set1.intersection(set2)
     return sorted(common)

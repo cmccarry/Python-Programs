@@ -1,18 +1,13 @@
 '''
-Write a program that can store a polynomial such as --> p(x) = 5*x^10 + 9*x^7 - x - 10 
-as a list of terms. 
-A term contains the coefficient and the power of x. 
-For example, you would store p(x) as --> (5,10),(9,7),(-1,1),(-10,0)
-Supply functions to add, multiply, and print polynomials. Supply a function that makes a polynomial from a single term. For example, the polynomial p can be constructed as --> p = newPolynomial(-10, 0)
+Stores a polynomial such as --> p(x) = 5*x^10 + 9*x^7 - x - 10 as a list of terms. 
+p(x) gets stored as --> (5,10),(9,7),(-1,1),(-10,0)
+The polynomial p can be constructed as:
+    p = newPolynomial(-10, 0)
     addTerm(p, -1, 1)
     addTerm(p, 9, 7)
     addTerm(p, 5, 10)
-Then compute p(x) * p(x).
-    q = multiply(p, p)
-    printPolynomial(q)
-
-Provide a module for the polynomial functions and import it into the driver module.'''
-#how tf i do this^
+Computes p(x) * p(x)
+'''
 
 def new_polynomial(coefficient, power):
     return [(coefficient,power)]
@@ -63,16 +58,3 @@ def print_polynomial(polynomial):
                 fullPolynomial += f" {sign} {abs(coeff)}x^{power}" 
     fullPolynomial = fullPolynomial.lstrip(" +")
     return fullPolynomial
-
-'''def main():
-    p = new_polynomial(-10, 0)
-    add_term(p, -1, 1)
-    add_term(p, 9, 7)
-    add_term(p, 5, 10)
-    p.sort(key = lambda x: x[1],reverse=True)
-    print(f"p(x) = {print_polynomial(p)}")
-    polynomialSquared = multiply_polynomial(p, p)
-    print(polynomialSquared)
-    print(f"p(x) * p(x) = {print_polynomial(polynomialSquared)}")
-    for element in p:
-        print(element[0],element[1])'''

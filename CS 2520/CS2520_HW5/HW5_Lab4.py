@@ -1,3 +1,8 @@
+'''
+Builds a word frequency dictionary from a list of words.
+The main code builds the word list from an input string, calls build_dictionary() to build the dictionary, and displays the dictionary sorted by key value.
+'''
+
 def build_dictionary(words):
     dictionary = {}
     for word in words:
