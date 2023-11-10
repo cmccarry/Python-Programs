@@ -14,6 +14,8 @@ def unique_characters(set1, set2):
     return sorted(unique)
 
 def missing_characters(set1, set2):
+    #creates a set(set3) with all characters in the alphabet
+    #compares both sets to set3 using .difference()
     set3 = set()
     for i in range(ord('a'), ord('z')+1):
         set3.add(chr(i))

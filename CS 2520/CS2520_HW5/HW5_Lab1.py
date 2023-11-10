@@ -3,14 +3,27 @@ Keeps a dictionary in which both keys and values are strings—names of students
 Prompts the user to add or remove students, to modify grades, or to print all grades. 
 '''
 
+def print_menu():
+    #outputs the user options
+    print('\n~~~~~~~~~~Menu~~~~~~~~~~')
+    print('1. Add Student')
+    print('2. Remove Student')
+    print('3. Modify Grade')
+    print('4. Print Class Roster')
+    print('5. Remove Entire Class')
+    print('6. Exit')
+    return
+
 def add_student(dictionary):
-    studentName = input('Enter the name of the student you wish to add: ')
-    studentGrade = input(f"Enter {studentName}'s grade: ")
+    #adds a student to the class, given their name and grade
+    studentName = (input('Enter the name of the student you wish to add: ')).title()
+    studentGrade = (input(f"Enter {studentName}'s grade: ")).upper()
     dictionary[studentName] = studentGrade
     return
 
 def remove_student(dictionary):
-    studentName = input('Enter the name of the student you wish to remove: ')
+    #removes student from class, given their name in the dictionary
+    studentName = (input('Enter the name of the student you wish to remove: ')).title()
     if studentName in dictionary:
         del dictionary[studentName]
         print(f'{studentName} was removed from the class')
@@ -19,7 +32,9 @@ def remove_student(dictionary):
     return
 
 def modify_grade(dictionary):
-    studentName = input('Enter the name of the student to modify their grade: ')
+    #changes student grade, given their name and new grade
+    studentName = (input('Enter the name of the student to modify their grade: ')).title()
+    (studentName[0]).upper()
     if studentName in dictionary:
         newGrade = (input(f"Enter {studentName}'s new grade: ")).upper()
         dictionary[studentName] = newGrade
@@ -28,7 +43,8 @@ def modify_grade(dictionary):
     return
 
 def print_grades(dictionary):
-    print('~~~~~~~~~~Class Roster~~~~~~~~~~')
+    #prints the class roster with format-> name: grade
+    print('~~~~~~Class Roster~~~~~~')
     if len(dictionary) == 0:
         print('Empty')
     for name,grade in dictionary.items():
@@ -36,6 +52,7 @@ def print_grades(dictionary):
     return
 
 def clear_class(dictionary):
+    #does dictionary.clear() if user inputs 'y'
     option = (input('Would you like to clear the entire class roster and grades? (y/n): ')).lower()
     if option == 'y':
         dictionary.clear()
@@ -48,13 +65,8 @@ def main():
     studentGrades = {}
 
     while True:
-        print('\n~~~~~~~~~~Menu~~~~~~~~~~')
-        print('1. Add Student')
-        print('2. Remove Student')
-        print('3. Modify Grade')
-        print('4. Print Class Roster')
-        print('5. Remove Entire Class')
-        print('6. Exit')
+
+        print_menu()
 
         userChoice = input("\nPlease enter your choice (1-6): ")
 

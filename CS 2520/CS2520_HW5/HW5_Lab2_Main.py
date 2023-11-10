@@ -10,14 +10,19 @@ Computes p(x) * p(x)
 '''
 
 def new_polynomial(coefficient, power):
+    #initializes array with elements (coefficient,power)
     return [(coefficient,power)]
 
 def add_term(polynomial, coefficent, power):
+    #adds a new term to an already initialized array
     polynomial.append((coefficent, power))
-    #polynomial.sort(key = lambda x: x[1],reverse=True)
     return polynomial
 
 def multiply_polynomial(p1, p2):
+    #creates a new polynomial: newP with elements from both p1 and p2
+    #coefficients of both being multiplied and added to newP
+    #powers of both being added together and added to newP
+    #newP has duplicates that need to be have coefficients added together to get result
     count = 0
     for coeff1, power1 in p1:
         for coeff2, power2 in p2:
@@ -26,8 +31,12 @@ def multiply_polynomial(p1, p2):
                 count += 1
             else:
                 newP = add_term(newP,coeff1*coeff2,power1+power2)
-    for element in newP:
-        result = new_polynomial(element[0],element[1])
+
+    #creates a new polynomial: result, using the first element of newP
+    result = new_polynomial(newP[0][0],newP[0][1])
+
+    #if entry is newP is a duplicate: coefficent*2 and element get added as an entry to result
+    #else: entry in newP is added to result
     for element in newP:
         if element not in result:
             if newP.count(element) > 1:
@@ -41,18 +50,19 @@ def multiply_polynomial(p1, p2):
 
 
 def print_polynomial(polynomial):
+    #returns the written form of the polynomial using the polynomial array
     fullPolynomial = ""
     for coeff, power in polynomial:
         sign = "+" if coeff >= 0 else "-"
         if power == 0:
             fullPolynomial += f" {sign} {abs(coeff)}"
         elif power == 1:
-            if coeff == 1:
+            if coeff == 1 or coeff == -1:
                 fullPolynomial += f" {sign} x"
             else:
                 fullPolynomial += f" {sign} {abs(coeff)}x"
         else:
-            if coeff == 1:
+            if coeff == 1 or coeff == -1:
                 fullPolynomial += f" {sign} x^{power}"
             else:
                 fullPolynomial += f" {sign} {abs(coeff)}x^{power}" 
