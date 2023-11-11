@@ -1,5 +1,11 @@
 from HW5_Lab2_Main import *
-
+'''
+The polynomial p can be constructed as:
+    p = newPolynomial(-10, 0)
+    addTerm(p, -1, 1)
+    addTerm(p, 9, 7)
+    addTerm(p, 5, 10)
+'''
 def main():
     #creates the polynomial using: new_polynomial(coefficient,power) and add_term(polynomial,coefficient,power)
     p = new_polynomial(-10, 0)

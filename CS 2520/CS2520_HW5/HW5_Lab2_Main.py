@@ -1,11 +1,6 @@
 '''
 Stores a polynomial such as --> p(x) = 5*x^10 + 9*x^7 - x - 10 as a list of terms. 
 p(x) gets stored as --> (5,10),(9,7),(-1,1),(-10,0)
-The polynomial p can be constructed as:
-    p = newPolynomial(-10, 0)
-    addTerm(p, -1, 1)
-    addTerm(p, 9, 7)
-    addTerm(p, 5, 10)
 Computes p(x) * p(x)
 '''
 
