@@ -1,3 +1,15 @@
+'''
+Prompts the user for two integers and then prints
+⦁	The sum
+⦁	The difference
+⦁	The product
+⦁	The average
+⦁	The distance (absolute value of the difference)
+⦁	The maximum (the larger of the two)
+⦁	The minimum (the smaller of the two)
+
+'''
+
 int1 = int(input("Enter the first integer: "))
 int2 = int(input("Enter the second integer: "))
 sum = int1 + int2

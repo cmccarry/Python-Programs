@@ -1,3 +1,9 @@
+'''
+Reads each line in a file
+Reverses its lines
+Writes them to another file
+'''
+
 def reverse(myArray):
     reversedArray = []
     for element in myArray:

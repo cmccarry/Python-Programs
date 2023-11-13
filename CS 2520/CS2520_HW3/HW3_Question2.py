@@ -1,8 +1,31 @@
+'''
+Asks the users from which unit they want to convert (fl. oz, gal, oz, lb, in, ft, mi) 
+    and to which unit they want to convert          (ml, l, g, kg, mm, cm, m, km)
+Ask for the value to be converted, then display the result
+Rejects incompatible conversions (such as gal ➔ km)
+'''
+
 before = input('Convert from: ')
 after = input('Convert to: ')
 value = float(input('Value: '))
-convertedValue = 0.0
 
+conversions_dictionary = {
+    'fl. oz': {'ml': 29.5735, 'l': 0.0295735},
+    'gal': {'ml': 3785.41, 'l': 3.78541},
+    'oz': {'g': 28.3495, 'kg': 0.0283495},
+    'lb': {'g': 453.592, 'kg': 0.453592},
+    'in': {'mm': 25.4, 'cm': 2.54, 'm': 0.0254, 'km': 0.0000254},
+    'ft': {'mm': 304.8, 'cm': 30.48, 'm': 0.3048, 'km': 0.0003048},
+    'mi': {'mm': 1609350, 'cm': 160935, 'm': 1609.35, 'km': 1.60935}
+}
+
+if before in conversions_dictionary and after in conversions_dictionary[before]:
+    converted_value = value * conversions_dictionary[before][after]
+    print(f'{value} {before} = {converted_value} {after}')
+else:
+    print('ERROR: Incompatible conversion')
+
+'''
 if before == 'fl. oz' or before == 'gal':
     if after == 'ml':
         if before == 'fl. oz':
@@ -70,3 +93,4 @@ elif before == 'in' or before == 'ft' or before =='mi':
         print(f'{value} {before} = {convertedValue} {after}')
     else:
         print(f'ERROR \nincompatible conversion')
+'''
