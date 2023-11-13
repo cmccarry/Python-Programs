@@ -1,5 +1,20 @@
 import random
 
+def getValidGuess(validChoices):
+    user_guess = 0
+    while user_guess not in validChoices:
+        try:
+            user_guess = input('Enter your guess (or q to exit): ')
+            user_guess = int(user_guess)
+            if 100 < user_guess or 1 > user_guess:
+                print('Please only enter an integer number from 1 to 100 or q')
+        except ValueError:
+            if user_guess == 'q':
+                print('Have a good day.')
+                exit()
+            print('Please only enter an integer number from 1 to 100 or q')
+    return user_guess
+
 #function to play the guessing game
 def guessingGame():
     '''validity is checked by the guess being an integer and between 1 and 100
@@ -14,18 +29,7 @@ def guessingGame():
         user_guess = 0
         guesses = 0
         while user_guess != random_number:
-            while user_guess not in validChoices:
-                try:
-                    user_guess = input('Enter your guess (or q to exit): ')
-                    user_guess = int(user_guess)
-                    if 100 < user_guess or 1 > user_guess:
-                        print('Please only enter an integer number from 1 to 100 or q')
-                except ValueError:
-                    if user_guess == 'q':
-                        print('Have a good day.')
-                        exit()
-                    print('Please only enter an integer number from 1 to 100 or q')
-            user_guess = int(user_guess)
+            user_guess = getValidGuess(validChoices)
             guesses += 1
             if user_guess < random_number:
                 print('That guess was too low, try again \n')

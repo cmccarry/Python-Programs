@@ -9,19 +9,17 @@ def print_menu():
     print(f'MENU \nc - Number of non-whitespace characters \nw - Number of words \nf - Fix capitalization \nr - Replace punctuation \ns - Shorten spaces \nq - Quit \n')
 
 #function to perform the menu option chosen
-def execute_menu(choice,text):
-    if choice == 'c':
-        output = get_num_of_non_WS_characters(text)
-    if choice == 'w':
-        output = get_num_of_words(text)
-    if choice == 'f':
-        output = fix_capitalization(text)
-    if choice == 'r':
-        output = replace_punctuation(text)
-    if choice == 's':
-        output = shorten_space(text)
-    if choice == 'q':
-        output = ''
+def execute_menu(choice, text):
+    menu_options = {
+        'c': get_num_of_non_WS_characters,
+        'w': get_num_of_words,
+        'f': fix_capitalization,
+        'r': replace_punctuation,
+        's': shorten_space,
+        'q': lambda x: ''  #empty string for 'q' choice
+    }
+    selected_option = menu_options.get(choice, lambda x: None)
+    output = selected_option(text)
     return output
 
 #function for option c
@@ -98,12 +96,14 @@ def shorten_space(text):
 def option_output(option,output):
     if option == 'c':
         print(f'Number of non-whitespace characters: {output} \n')
-    if option == 'w':
+    elif option == 'w':
         print(f'Number of words: {output} \n')
-    if option in 'frs':
+    elif option in 'frs':
         print(f'Edited text: {output} \n')
-    if option == 'q':
+    elif option == 'q':
         print('Thank you come again')
+    else:
+        print(f'Invalid option: {option}')
 
 #main function
 def main():
