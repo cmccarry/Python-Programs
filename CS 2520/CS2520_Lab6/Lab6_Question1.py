@@ -1,3 +1,7 @@
+'''
+Defines a product class that manages product inventory
+'''
+
 class Product:
     def __init__(self, code = '', price = 0, count = 0):
         self.code = code
