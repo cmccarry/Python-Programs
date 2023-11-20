@@ -1,3 +1,7 @@
+'''
+a program that produces ten random permutations of the numbers 1 to 10
+'''
+
 import random
 
 for j in range(10):

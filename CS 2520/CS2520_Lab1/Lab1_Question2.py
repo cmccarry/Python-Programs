@@ -1,3 +1,7 @@
+'''
+A program that reads in three strings and sorts them lexicographically
+'''
+
 firstInput = str(input("Enter a string: "))
 secondInput = str(input("Enter a string: "))
 thirdInput = str(input("Enter a string: "))

@@ -1,4 +1,16 @@
-menu = (f'Today\'s Menu: \n  1)Gumbo \n  2)Jambalaya \n  3)Quit\n')
+'''
+A program using a function to create a menu mentioned below:
+
+Today's Menu:
+   1) Gumbo
+   2) Jambalaya
+   3) Quit
+'''
+
+menu = (f'Today\'s Menu: \
+        \n  1)Gumbo \
+        \n  2)Jambalaya \
+        \n  3)Quit\n')
 
 def main():
     order = ''

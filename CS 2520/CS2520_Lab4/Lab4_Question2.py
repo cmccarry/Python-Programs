@@ -1,3 +1,7 @@
+'''
+Uses recursion to compute a^n, where n is a positive integer.
+'''
+
 def powerNum(integer,power):
     if power == 0:
         return 1

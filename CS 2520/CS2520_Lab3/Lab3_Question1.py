@@ -1,3 +1,8 @@
+'''
+Has a function: scramble(word), that constructs a scrambled version of a given word, randomly flipping two characters other than the first and last one. 
+A program that reads words and prints the scrambled words
+'''
+
 import random
 def main():
     phrase = input('Enter a phrase: ')

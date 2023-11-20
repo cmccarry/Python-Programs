@@ -1,3 +1,7 @@
+'''
+list functions that carry out specific tasks for a list of integers
+'''
+
 original = [1,4,7,7,8,21,39]
 print(f'Original List : {original}')
 

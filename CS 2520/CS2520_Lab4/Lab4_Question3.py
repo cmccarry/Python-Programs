@@ -1,3 +1,7 @@
+'''
+A program that converts a Roman number such as MCMLXXVIII to its decimal number representation.
+'''
+
 def findValue(x):
     if x == 'M': return 1000
     if x == 'D': return 500

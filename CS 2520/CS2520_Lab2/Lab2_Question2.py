@@ -1,3 +1,12 @@
+'''
+A program that takes a simple password and makes it stronger by replacing characters using the key below, and by appending "!" to the end of the input string.
+    i becomes 1
+    a becomes @
+    m becomes M
+    B becomes 8
+    s becomes $
+'''
+
 user_input = str(input('Enter a password: '))
 newPassword = ''
 for i in range(len(user_input)):

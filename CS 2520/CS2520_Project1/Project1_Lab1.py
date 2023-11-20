@@ -48,9 +48,10 @@ def fix_capitalization(text):
     for char in text:
         if char != ' ':
             if doCapitalization:
-                char = char.upper()
-                doCapitalization = False
-                number += 1
+                if char.islower():
+                    char = char.upper()
+                    doCapitalization = False
+                    number += 1
             if char in '.!?':
                 doCapitalization = True
         newText += char

@@ -17,7 +17,7 @@ def get_circle(message,decider):
                     chances -= 1
                     print(f'Invalid input. Please enter an integer value for this coordinate in Quadrant 1 \n{chancePrompt}\n')
             elif decider == 'r':
-                if value > 0:
+                if value >= 0:
                     return value
                 else:
                     chances -= 1

@@ -1,3 +1,8 @@
+'''
+A program that takes a date as input and outputs the date's season in the northern hemisphere. 
+The input is a string to represent the month and an int to represent the day
+'''
+
 month = str(input("Enter the month: "))
 date = int(input("Enter the day: "))
 month = month.lower()

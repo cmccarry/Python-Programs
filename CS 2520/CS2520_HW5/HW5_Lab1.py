@@ -5,13 +5,13 @@ Prompts the user to add or remove students, to modify grades, or to print all gr
 
 def print_menu():
     #outputs the user options
-    print('\n~~~~~~~~~~Menu~~~~~~~~~~')
-    print('1. Add Student')
-    print('2. Remove Student')
-    print('3. Modify Grade')
-    print('4. Print Class Roster')
-    print('5. Remove Entire Class')
-    print('6. Exit')
+    print('\n~~~~~~~~~~Menu~~~~~~~~~~ \
+          \n 1. Add Student \
+          \n 2. Remove Student \
+          \n 3. Modify Grade \
+          \n 4. Print Class Roster \
+          \n 5. Remove Entire Class \
+          \n 6. Exit')
     return
 
 def add_student(dictionary):

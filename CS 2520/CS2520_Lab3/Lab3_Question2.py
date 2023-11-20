@@ -1,3 +1,12 @@
+'''
+Has a function: getTimeName(hours, minutes), that returns the English name for a point in time, such as:
+    "ten minutes past two"
+    "half past three"
+    "a quarter to four"
+    "five o'clock"
+Assumes that hours are between 1 and 12.
+'''
+
 def main():
     userHour = int(input('Enter the hour: '))
     userMinute = int(input('Enter the minutes: '))

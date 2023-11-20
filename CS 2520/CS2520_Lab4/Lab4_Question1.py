@@ -1,3 +1,9 @@
+'''
+Has a recursive function
+    def isPalindrome(string):
+that returns True if string is a palindrome, that is, a word that is the same when reversed.
+'''
+
 def isPalindrome(word):
     if len(word) < 2:
         return True
