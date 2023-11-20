@@ -28,7 +28,7 @@ def guessingGame():
         random_number = random.randint(1, 100)
         user_guess = 0
         guesses = 0
-        while user_guess != random_number:
+        while True:
             user_guess = getValidGuess(validChoices)
             guesses += 1
             if user_guess < random_number:
@@ -38,7 +38,6 @@ def guessingGame():
             else:
                 print(f'Congratulations! You guessed the number: {random_number} \non guess number {guesses}')
                 break
-            user_guess = 0
         option = input('Would you like to keep playing? (y/n): ')
     print('Thank you! Have a good day.')
 
