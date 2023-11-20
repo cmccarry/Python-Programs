@@ -31,6 +31,7 @@ class ComboLock :
         if self.tries != 2:
             print(f"combination failed")
             exit()
+        
         self.combination['combo2'] -= ticks
 
     def turnRight(self, ticks):
@@ -38,6 +39,7 @@ class ComboLock :
         if self.tries != 1 and self.tries != 3:
             print(f"combination failed")
             exit()
+        
         if self.tries == 1:
             self.combination['combo1'] -= ticks
         else:
@@ -50,6 +52,7 @@ class ComboLock :
         return True
 
 lock = ComboLock()
+lock.reset()
 lock.ComboLock(12, 4, 30)
 lock.turnRight(12)
 lock.turnLeft(4)

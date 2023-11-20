@@ -1,3 +1,8 @@
+'''
+Implement a VotingMachine class that can be used for a simple election.
+Have methods to clear the machine state, to vote for a Democrat, to vote for a Republican, and to get the tallies for both parties.
+'''
+
 class VotingMachine:
     def __init__(self):
         self.democrat_votes = 0
