@@ -2,7 +2,7 @@
 list functions that carry out specific tasks for a list of integers
 '''
 
-original = [1,4,7,7,8,21,39]
+original = [1,4,7,9,8,2,21,39]
 print(f'Original List : {original}')
 
 
@@ -103,7 +103,7 @@ def partI():
             if i == listI[j-1]:
                 adjacent = True
         elif i == listI[j+1] or i == listI[j-1]:
-                adjacent = True
+            adjacent = True
     print(adjacent,'part I')
 
 
