@@ -1,7 +1,7 @@
 '''
 Make a class Employee with a name and salary.
 Make a class Manager inherit from Employee.
-Add an instance variable, named _department, that stores a string.
+Add an instance variable named department, that stores a string.
 Supply a method __repr__ that prints the manager's name, department, and salary.
 Make a class Executive inherit from Manager.
 Supply appropriate __repr__ methods for all classes.
@@ -24,7 +24,7 @@ class Manager(Employee):
         self._department = department
 
     def __repr__(self):
-        return f'{super().__repr__()}, Manger at the Department of {self._department}'
+        return f'{super().__repr__()}, Manager at the Department of {self._department}'
 
 
 class Executive(Manager):
