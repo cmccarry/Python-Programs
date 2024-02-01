@@ -405,6 +405,7 @@ print(myArray)
 '''
 
 
+
 '''
 #sets and functions
 num1 = set([1,2,3]) #has 1, 2, 3
@@ -450,8 +451,8 @@ print('Union using |:', A|B)    #elements of A and B combined
 print('Union using function:', A.union(B))  #elements of A and B combined
 print('Intersection using &:', A&B) #element(s) present in A and B
 print('Intersection using function:', A.intersection(B))    #element(s) present in A and B
-print('Difference using -:',A-B)    #element(s) in C not present in D
-print('Difference using function:',A.difference(B)) #element(s) in C not present in D
+print('Difference using -:', A-B)    #element(s) in A not present in B
+print('Difference using function:', A.difference(B)) #element(s) in A not present in B
 print('Symmetric difference using ^:', A^B) #elements in A and B without the elements present in both
 print('Symmetric difference using function:', A.symmetric_difference(B))    #elements in A and B without the elements present in both
 
@@ -468,6 +469,31 @@ print(G.issuperset(E))  #True if all elements of E are in G, False if not
 
 #nameList = [input(),input(),input()]
 #print(sorted(nameList)
+'''
+
+'''
+#dictionary
+myDict = dict()
+myDict['Jon'] = 1
+myDict["Connor"] = 2
+print(myDict.items())
+for item in myDict.items():
+    print(item)
+    for keyvalue in item:
+        print(keyvalue)
+print(myDict.keys())
+for key in myDict.keys():
+    print(key)
+print(myDict.values())
+for value in myDict.values():
+    print(value)
+print("get value can return error:", myDict['Jon'])
+print("get value default value 0:", myDict.get('Jon', 0))
+print("length of dict:", len(myDict))
+print(myDict.popitem())
+nums = [1,2,3,4]
+squares = {item:item**2 for item in nums}
+print(squares.get(2,0))
 '''
 
 '''
@@ -533,7 +559,7 @@ main()
 '''
 
 '''string = input().split()
-print(str(string))
+print((string))
 string.remove('water')
 string.remove('2')
 print(string)'''
@@ -544,7 +570,7 @@ for word in user_input:
     print(word)
     wordString += word
     wordString += ', '
-wordString.rstrip(' ')
+wordString = wordString[:-2]
 print(wordString)'''
 
 '''i1 = 1
@@ -554,4 +580,3 @@ while i1 < 19:
         print(f'{i1}{i2}',end='')
         i2 = i2 + 3
     i1 = i1 + 10'''
-    

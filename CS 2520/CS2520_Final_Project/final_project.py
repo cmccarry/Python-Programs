@@ -24,11 +24,13 @@ class ShoppingCart:
 
     def add_item(self, item):
         self.cart_items.append(item)
+        print(f"\n~~~{item.item_name} added to cart~~~")
 
     def remove_item(self, removed_item):
         for item in self.cart_items:
             if item.item_name == removed_item:
                 self.cart_items.remove(item)
+                print(f"\n~~~{item.item_name} removed~~~")
                 return
         print("Item not found in cart. Nothing removed.")
 
@@ -36,6 +38,7 @@ class ShoppingCart:
         for item in self.cart_items:
             if item.item_name == modified_item.item_name:
                 item.item_quantity = modified_item.item_quantity
+                print(f"\n~~~{item.item_name} modified~~~")
                 return
         print("Item not found in cart. Nothing modified.")
 
@@ -49,7 +52,7 @@ class ShoppingCart:
         if not self.cart_items:
             print("SHOPPING CART IS EMPTY")
             return
-        print(f"{self.customer_name}'s Shopping Cart - {self.current_date}")
+        print(f"\n{self.customer_name}'s Shopping Cart - {self.current_date}")
         print(f"Number of Items: {self.get_num_items_in_cart()} \n")
         for item in self.cart_items:
             item.print_item_cost()
@@ -59,7 +62,7 @@ class ShoppingCart:
         if not self.cart_items:
             print("SHOPPING CART IS EMPTY")
             return
-        print(f"{self.customer_name}'s Shopping Cart - {self.current_date} \n")
+        print(f"\n{self.customer_name}'s Shopping Cart - {self.current_date} \n")
         print("Item Descriptions")
         for item in self.cart_items:
             item.print_item_description()
@@ -82,25 +85,30 @@ def execute_menu(choice, shopping_cart):
         item.item_price = float(input("Enter the item price:\n"))
         item.item_quantity = int(input("Enter the item quantity:\n"))
         shopping_cart.add_item(item)
+
     # Remove item from cart
     elif choice == 'r':
         item_name = input("Enter name of item to remove:\n")
         shopping_cart.remove_item(item_name)
+
     # Change item quantity
     elif choice == 'c':
         modified_item = ItemToPurchase()
         modified_item.item_name = input("Enter the item name:\n")
         modified_item.item_quantity = int(input("Enter the new quantity:\n"))
         shopping_cart.modify_item(modified_item)
+
     # Output items' descriptions
     elif choice == 'i':
         shopping_cart.print_descriptions()
+
     # Output shopping cart
     elif choice == 'o':
         shopping_cart.print_total()
+
     # Quit
     elif choice == 'q':
-        print("Thank you for shopping. Have a good day!")
+        print("\nThank you for shopping. Have a good day!\n")
 
 def main():
     name = input("Enter customer's name: \n")
@@ -115,7 +123,7 @@ def main():
         user_choice = ''
         print_menu()
         user_choice = (input("\nChoose an option: \n")).lower()
-        while user_choice not in "arcioq":
+        while user_choice not in "arcioq" or len(user_choice) != 1:
            print("Please choose a valid option.")
            print_menu()
            user_choice = (input("\nChoose an option: \n")).lower()
