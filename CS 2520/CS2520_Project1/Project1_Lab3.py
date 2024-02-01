@@ -1,13 +1,16 @@
 import random
 
+# function to get a valid user choice
 def getValidGuess(validChoices):
     user_guess = 0
     while user_guess not in validChoices:
         try:
             user_guess = input('Enter your guess (or q to exit): ')
             user_guess = int(user_guess)
-            if 100 < user_guess or 1 > user_guess:
-                print('Please only enter an integer number from 1 to 100 or q')
+            if user_guess > 100 or user_guess < 1:
+                print('Please only enter a number from 1 to 100 or q')
+
+        # if user_guess can't be converted to an integer
         except ValueError:
             if user_guess == 'q':
                 print('Have a good day.')
@@ -15,7 +18,7 @@ def getValidGuess(validChoices):
             print('Please only enter an integer number from 1 to 100 or q')
     return user_guess
 
-#function to play the guessing game
+# function to play the guessing game
 def guessingGame():
     '''validity is checked by the guess being an integer and between 1 and 100
     loops user inputs until the random number is guessed'''
@@ -36,7 +39,8 @@ def guessingGame():
             elif user_guess > random_number:
                 print('That guess was too high, try again \n')
             else:
-                print(f'Congratulations! You guessed the number: {random_number} \non guess number {guesses}')
+                print(f'Congratulations! You guessed the number: {random_number} \
+                      \non guess number {guesses}')
                 break
         option = input('Would you like to keep playing? (y/n): ')
     print('Thank you! Have a good day.')
